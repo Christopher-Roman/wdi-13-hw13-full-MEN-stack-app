@@ -25,9 +25,15 @@ router.post('/', (req, res) => {
 		} else {
 			console.log(createdCard);
 			res.redirect('/cards')
-		}
-	})	
-})
+		};
+	});	
+});
+
+router.get('/:id/edit', (req, res) => {
+	Cards.findById(req.params.id, (err, foundCard) => {
+		res.render('edit.ejs', {card: foundCard});
+	});
+});
 
 router.get('/:id', (req, res) => {
 	console.log(req.params);

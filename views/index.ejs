@@ -8,12 +8,13 @@
 	<ul>
 		<% for(let i = 0; i < cards.length; i++) { %>
 			<li>
-				<a href="/cards/<%=cards[i].id%>"><%= cards[i].name%></a> is a <%= cards[i].color%> - <%=cards[i].type%>
+				<a href="/cards/<%=cards[i].id%>"><%= cards[i].name%></a> is a <%= cards[i].color%> - <%=cards[i].type%> --
+				<a href="/cards/<%=cards[i].id%>/edit">Edit</a>
 			</li>
 		<% } %>
 	</ul>
 	<nav>
-		<a href="/cards/new">Add a New Card</a>
+		<a class="edit" href="/cards/new">Add a New Card</a>
 	</nav>
 </body>
 </html>

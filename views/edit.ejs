@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Edit Card</title>
+</head>
+<body>
+	<h1><%=card.name%></h1>
+	<div class="image"><img src="<%=card.image%>"></div>
+	<div class="info">
+		<form method="POST" action="/cards/<%=card.id%>?_method=PUT">
+			Image: <input type="text" name="image" value="<%=card.image%>"><br>
+			Color: <input type="text" name="color" value="<%=card.color%>"><br>
+			Cost: <input type="text" name="cost" value="<%=card.cost%>"><br>
+			Type: <input type="text" name="type" value="<%=card.type%>"><br>
+			Lore: <input type="text" name="text" value="<%=card.text%>"><br>
+			Abilities: <input type="text" name="ability" value="<%=card.ability%>"><br>
+			<input type="submit" name="" value="Submit Changes">
+		</form>
+	</div><br>
+
+</body>
+</html>

@@ -47,14 +47,19 @@ router.get('/:id', (req, res) => {
 	});	
 });
 
+router.delete('/:id', (req, res) => {
+	Cards.findByIdAndRemove(req.params.id, (err, deleteCard) => {
+		res.redirect('/cards');
+	});
+});
 
 
 
 router.put('/:id', (req, res) => {
 	Cards.findByIdAndUpdate(req.params.id, req.body, (err, updateCard) => {
-		res.redirect('/cards')
-	})
-})
+		res.redirect('/cards');
+	});
+});
 
 
 

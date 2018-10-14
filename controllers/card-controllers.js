@@ -29,7 +29,17 @@ router.post('/', (req, res) => {
 	})	
 })
 
-
+router.get('/:id', (req, res) => {
+	console.log(req.params);
+	Cards.findById(req.params.id, (err, foundCard) => {
+		if(err) {
+			console.log(err);
+		} else {
+			console.log(foundCard, ' foundCard');
+			res.render('show.ejs', {card: foundCard})
+		};
+	});	
+});
 
 
 

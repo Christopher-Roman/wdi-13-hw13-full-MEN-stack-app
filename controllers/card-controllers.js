@@ -50,6 +50,11 @@ router.get('/:id', (req, res) => {
 
 
 
+router.put('/:id', (req, res) => {
+	Cards.findByIdAndUpdate(req.params.id, req.body, (err, updateCard) => {
+		res.redirect('/cards')
+	})
+})
 
 
 
